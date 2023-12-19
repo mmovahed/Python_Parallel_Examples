@@ -1,6 +1,10 @@
 from mpi4py import MPI
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+import time
+
+# mpiexec -n 4 py Heat_PDE_FiniteDifference_DM.py
+
 
 def solve_fractional_pde(alpha, nx, nt, tend):
     comm = MPI.COMM_WORLD
@@ -43,12 +47,16 @@ nx = 1000
 nt = 100
 tend = 1.0
 
-x, u = solve_fractional_pde(alpha, nx, nt, tend)
-    
-if x is not None:
-    plt.plot(x, u)
-    plt.xlabel('x')
-    plt.ylabel('u')
-    plt.title('Solution of Heat Equation')
-    plt.show()
 
+time2 = time.perf_counter()
+
+x, u = solve_fractional_pde(alpha, nx, nt, tend)
+
+print("Execution time : ", time.perf_counter() - time2)
+    
+#if x is not None:
+#    plt.plot(x, u)
+#    plt.xlabel('x')
+#    plt.ylabel('u')
+#    plt.title('Solution of Heat Equation')
+#    plt.show()
