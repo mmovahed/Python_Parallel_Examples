@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>46ee31be-e066-4061-9ab9-c159892731cd</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Heat_PDE_FiniteDifference_Parallel_SM.py</StartupFile>
+    <StartupFile>Simple_ODE_Spectral_OpenCL.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Heat_PDE_FiniteDifference_Parallel_SM.py" />
+    <Compile Include="Simple_ODE_Spectral_OpenCL.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
